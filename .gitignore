@@ -1,0 +1,14 @@
+﻿node_modules
+packages
+bin
+obj
+
+.next
+.t
+.tmp
+.vs
+
+*.env
+*.npmrc
+*.log
+*.user
