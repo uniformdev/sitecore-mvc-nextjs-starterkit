@@ -125,6 +125,17 @@ You can serve the static version with any file server now. To test, run `npx ser
 
 You are now ready to deploy your statically generated Habitat site to virtually any delivery environment.
 
+## Handling media / images
+
+As of now, media/image support is not availble in public version of Uniform ([contact us](mailto:hi@unfrm.io) if you need this capability now).
+
+In meantime, there are multiple alternatives as to how you can configure media handling for your JAMstackified Sitecore site:
+1. Have your Sitecore Content Delivery origin handle Media Library requests (this is enabled with `Media.AlwaysIncludeServerUrl=true` setting enabled in `Habitat.UniformSettings.config` config patch included in this repo).
+1. Configure a "pull-based" CDN for Sitecore Media Library - [it is quite straightforward](https://doc.sitecore.com/developers/91/sitecore-experience-manager/en/manually-configure-the-sitecore-media-library-to-use-a-cdn.html). Besides the usual suspects, such as Akamai, Cloudflare and Cloudfront, there is a set of cool smart image CDNs to consider that are very much plug and play:
+   - [CloudImage](https://www.cloudimage.io/)
+   - [Cloudinary](https://cloudinary.com/)
+   - [Piio](http://piio.co/)
+
 ## Deployment
 
 ### Netlify
