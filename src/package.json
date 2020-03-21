@@ -11,7 +11,7 @@
     "build": "next build",
     "start": "next build && cross-env NODE_ENV=production ts-node ./server.ts",
     "format": "prettier --write \"{./components,./pages}/**/*.{js,ts,tsx}\"",
-    "export:site": "next export -- --threads 8 --concurrency 1",
+    "export:site": "next export -- --threads 1 --concurrency 1",
     "move:static": "node ./scripts/move-static.js",
     "export": "npm-run-all --serial build export:site move:static",
     "azure": "node ./deploy-azure.js",
