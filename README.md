@@ -13,7 +13,8 @@ This starter kit showcases how you can "JAMstackify" and existing Sitecore MVC s
 
 ## Sitecore version compatibility
 
-While this starter kit has been tested for Sitecore 9.2, this approach is compatible with any 8.x and 9.x version. [Contact us](mailto:hi@unfrm.io) if you are on an earlier version.
+While this starter kit has been tested for Sitecore 9.2, however, it is expected to work fine with Sitecore 9.3 and in fact is compatible with any 8.x and 9.x version.
+[Contact us](mailto:hi@unfrm.io) if you are on an earlier version.
 
 ## Repo structure
 
@@ -28,9 +29,9 @@ While this starter kit has been tested for Sitecore 9.2, this approach is compat
 1. npm token provided by the folks @ Uniform ([contact us for details](mailto:hi@unfrm.io)).
 1. Unmodified original Habitat running on top of Sitecore 9.2.
 
-    > If you have an installed Habitat 9.2 locally, please make sure it is unmodified and **verify** it is operational at http://habitat.dev.local as it will make the configuration much easier.
+   > If you have an installed Habitat 9.2 locally, please make sure it is unmodified and **verify** it is operational at http://habitat.dev.local as it will make the configuration much easier.
 
-    > If you need to deploy Habitat, feel free to use [our Habitat 9.2 fork](https://github.com/uniformdev/habitat) (we upgraded `gulp` to be compatible with last nodejs version) or the [official one](https://github.com/Sitecore/Habitat) which is no longer maintained.
+   > If you need to deploy Habitat, feel free to use [our Habitat 9.2 fork](https://github.com/uniformdev/habitat) (we upgraded `gulp` to be compatible with last nodejs version) or the [official one](https://github.com/Sitecore/Habitat) which is no longer maintained.
 
 ## Setting up the server-side
 
@@ -49,27 +50,26 @@ While this starter kit has been tested for Sitecore 9.2, this approach is compat
      ```
 
      > This value will be used to secure the deployment endpoint during Sitecore publishing and should be changed to a secret value in non-developer environments. The same value should be used when setting the `UNIFORM_API_TOKEN` environment variable (see below).
-   
+
    - `Uniform.LicenseKey` with the value of Uniform license key you've received:
 
      <add name="Uniform.LicenseKey" connectionString="LICENSE-KEY-GOES-HERE" />
 
+> Since these connection strings may not change frequently in development environment, consider adding these connection strings globally to IIS Manager (stored in `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\config\web.config`):
 
-   > Since these connection strings may not change frequently in development environment, consider adding these connection strings globally to IIS Manager (stored in `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\config\web.config`):
+1.  Open IIS Manager
+1.  Select your computer name in the tree on the left
+1.  Select Connection Strings
+1.  Click Add in the right panel
+1.  Fill in the dialog with values from bulleted list above
 
-   1. Open IIS Manager
-   1. Select your computer name in the tree on the left
-   1. Select Connection Strings
-   1. Click Add in the right panel
-   1. Fill in the dialog with values from bulleted list above
-
-   ```
-   Name: connection-string-name
-   ( ) SQL Server
-   (x) Custom
-      .------------------------
-      | connection-string-value
-   ```
+```
+Name: connection-string-name
+( ) SQL Server
+(x) Custom
+   .------------------------
+   | connection-string-value
+```
 
 ### Quick test of the server-side
 
@@ -101,13 +101,13 @@ You are expected to get valid HTTP 200 response with JSON data.
 1. Set the `NPM_TOKEN` environment variable with the value we provided you with.
 
    You can use `$Env:NPM_TOKEN="your-npm-token here"` in PowerShell or `export NPM_TOKEN="your-npm-token here"` in Bash.
-   
-   > This variable is used within the `.npmrc` file located next to `package.json`
-     So alternatively, simply replace `${NPM_TOKEN}` within `.npmrc` file with the value we provided you with.
 
-      ```bash
-      //registry.npmjs.org/:_authToken=npm-token-guid
-      ```
+   > This variable is used within the `.npmrc` file located next to `package.json`
+   > So alternatively, simply replace `${NPM_TOKEN}` within `.npmrc` file with the value we provided you with.
+
+   ```bash
+   //registry.npmjs.org/:_authToken=npm-token-guid
+   ```
 
 1. Install all the dependencies with `npm install`
 
@@ -130,6 +130,7 @@ You are now ready to deploy your statically generated Habitat site to virtually 
 As of now, media/image support is not availble in public version of Uniform ([contact us](mailto:hi@unfrm.io) if you need this capability now).
 
 In meantime, there are multiple alternatives as to how you can configure media handling for your JAMstackified Sitecore site:
+
 1. Have your Sitecore Content Delivery origin handle Media Library requests (this is enabled with `Media.AlwaysIncludeServerUrl=true` setting enabled in `Habitat.UniformSettings.config` config patch included in this repo).
 1. Configure a "pull-based" CDN for Sitecore Media Library - [it is quite straightforward](https://doc.sitecore.com/developers/91/sitecore-experience-manager/en/manually-configure-the-sitecore-media-library-to-use-a-cdn.html). Besides the usual suspects, such as Akamai, Cloudflare and Cloudfront, there is a set of cool smart image CDNs to consider that are very much plug and play:
    - [CloudImage](https://www.cloudimage.io/)
@@ -169,21 +170,22 @@ While this approach allows you to run the build on any server and deploy to Netl
 
 When creating the site, specify the following build settings:
 
-![Netlify build settings](docs/images/netlify-build-settings.png "Netlify build settings")
+![Netlify build settings](docs/images/netlify-build-settings.png 'Netlify build settings')
 
 Afterwards, make sure that you add the following Environment variables in the newly created sites' dashboard under `/settings/deploys`:
 
-![Netlify build-time environment variables](docs/images/netlify-env-vars.png "Netlify build-time environment variables")
+![Netlify build-time environment variables](docs/images/netlify-env-vars.png 'Netlify build-time environment variables')
 
 The following environment variables are must haves. If any of these settings differ from defaults in `_config.js` you would need to specify those in Netlify:
-   ```
-   UNIFORM_API_TOKEN=1234
-   UNIFORM_API_URL=http://your-sc-host
-   UNIFORM_DATA_URL=http://your-sc-host
-   UNIFORM_API_SITENAME=habitat
-   UNIFORM_API_DEFAULT_LANGUAGE=en
-   NPM_TOKEN=<the value of the npm token received from us>
-   ```
+
+```
+UNIFORM_API_TOKEN=1234
+UNIFORM_API_URL=http://your-sc-host
+UNIFORM_DATA_URL=http://your-sc-host
+UNIFORM_API_SITENAME=habitat
+UNIFORM_API_DEFAULT_LANGUAGE=en
+NPM_TOKEN=<the value of the npm token received from us>
+```
 
 Since Netlify will connect to your Sitecore instance, consider setting up a tunnel to your local Sitecore instance if you don't have it deployed publicly yet with something like ngrok: `ngrok http -host-header="ABCsc.dev.local" ABCsc.dev.local:80`
 
@@ -195,13 +197,13 @@ Since Netlify will connect to your Sitecore instance, consider setting up a tunn
 
 1. In Azure Portal, open the "Static website" settings for your Azure Blob container
 
-   ![Azure Static website](docs/images/azure-static-website.png "Azure Static website")
+   ![Azure Static website](docs/images/azure-static-website.png 'Azure Static website')
 
 1. Make sure this setting is enabled and it is associated with the `$web` container created above.
 
 1. Copy the value of `Primary endpoint` into the clipboard. It should looks something along with this: `https://ABC.web.core.windows.net/`
 
-   ![Azure Static website primary endpoint](docs/images/azure-static-endpoint.png "Azure Static website primary endpoint")
+   ![Azure Static website primary endpoint](docs/images/azure-static-endpoint.png 'Azure Static website primary endpoint')
 
 1. Add the following additional environment variables to the `.env` file located next to your `package.json` file.
 
@@ -247,9 +249,9 @@ The static version of the Habitat site is now expected to be served from this en
 
 1. Run `npm run deploy:aws`. This will provision the S3 bucket with "Static site hosting" settings and will deploy the contents of the `out` folder to it. At the end of the process, you should see the following in the console and the `aws.config.json` will be created in the project root:
 
-      ```
-      AwsS3PublishProvider deployed site files: out
-      ```
+   ```
+   AwsS3PublishProvider deployed site files: out
+   ```
 
 ### Other deployment targets
 
@@ -258,9 +260,11 @@ Please [contact us](mailto:hi@unfrm.io) if your deployment to your CDN / hosting
 ## Other things you can do
 
 ### Migrate components to React one by one
+
 WIP
 
 ### Configure deployment on Sitecore publish
+
 WIP
 
 ### Setting up Preview server
