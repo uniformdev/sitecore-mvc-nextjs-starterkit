@@ -16,6 +16,16 @@ This starter kit showcases how you can "JAMstackify" and existing Sitecore MVC s
 While this starter kit has been tested for Sitecore 9.2, however, it is expected to work fine with Sitecore 9.3 and in fact is compatible with any 8.x and 9.x version.
 [Contact us](mailto:hi@unfrm.io) if you are on an earlier version.
 
+## Next.js role
+
+This starter kit is using [Next.js 9.3](https://nextjs.org/), a battleground tested React Framework, which is also capable of doing static site export, essentially acting as a static site generator.
+
+There are multiple reasons why we are using Next.js in this context:
+
+1. Allowing to gradually replace your Sitecore MVC renderings with React, component by component.
+1. Leveraging outstanding server-side rendering option that Next.js provides out of the box. This is critical to retain Sitecore Experience Editor and Preview functionality.
+1. Leveraging utilities such as routing, the plugin system and many other enhancements that improve Developer Experience and help with building fast sites.
+
 ## Repo structure
 
 - `/sitecore` - the required configuration file to drop into your Sitecore intance with some setting overrides enabling smoother operation of Uniform.
@@ -170,11 +180,11 @@ While this approach allows you to run the build on any server and deploy to Netl
 
 When creating the site, specify the following build settings:
 
-![Netlify build settings](docs/images/netlify-build-settings.png 'Netlify build settings')
+![Netlify build settings](docs/images/netlify-build-settings.png "Netlify build settings")
 
 Afterwards, make sure that you add the following Environment variables in the newly created sites' dashboard under `/settings/deploys`:
 
-![Netlify build-time environment variables](docs/images/netlify-env-vars.png 'Netlify build-time environment variables')
+![Netlify build-time environment variables](docs/images/netlify-env-vars.png "Netlify build-time environment variables")
 
 The following environment variables are must haves. If any of these settings differ from defaults in `_config.js` you would need to specify those in Netlify:
 
@@ -197,13 +207,13 @@ Since Netlify will connect to your Sitecore instance, consider setting up a tunn
 
 1. In Azure Portal, open the "Static website" settings for your Azure Blob container
 
-   ![Azure Static website](docs/images/azure-static-website.png 'Azure Static website')
+   ![Azure Static website](docs/images/azure-static-website.png "Azure Static website")
 
 1. Make sure this setting is enabled and it is associated with the `$web` container created above.
 
 1. Copy the value of `Primary endpoint` into the clipboard. It should looks something along with this: `https://ABC.web.core.windows.net/`
 
-   ![Azure Static website primary endpoint](docs/images/azure-static-endpoint.png 'Azure Static website primary endpoint')
+   ![Azure Static website primary endpoint](docs/images/azure-static-endpoint.png "Azure Static website primary endpoint")
 
 1. Add the following additional environment variables to the `.env` file located next to your `package.json` file.
 
