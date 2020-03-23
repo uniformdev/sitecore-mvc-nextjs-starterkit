@@ -1,5 +1,4 @@
 import React from 'react';
-import { NextContext } from 'next';
 
 // Uniform
 import { PageProps, getPageProps } from '@uniformdev/common-client';
@@ -11,7 +10,7 @@ import { consoleLogger } from '../utils/logging/consoleLogger';
 
 // Page
 export default class extends React.Component<PageProps> {
-    static async getInitialProps(arg: NextContext) {
+    static async getInitialProps(arg: any) {
         return getPageProps(arg.asPath, parseUniformNextConfig(), consoleLogger);
     }
 
