@@ -257,8 +257,46 @@ Please [contact us](mailto:hi@unfrm.io) if your deployment to your CDN / hosting
 
 ## Other things you can do
 
-### Migrate components to React one by one
-WIP
+### Migrate MVC components to React one-by-one
+
+Uniform extracts HTML output of every individual MVC rendering and passes this alongside with other page information. When NextJs constructs the page (either on the server or in client) it still uses bare React component to represent this HTML, so swapping MVC component with React one is just the matter of disabling HTML extraction and changing rendering name. 
+
+This guide shows how to swap MVC component with React one for the entire Sitecore instance, not page-by-page:
+
+1.  Prepare React component to swap to
+
+    *   Create `src/components/HelloWorld.tsx` file as follows:
+   
+        ```
+        import * as React from 'react';
+        import { Component } from '@uniformdev/next';
+        export class HelloWorld extends Component {
+            render() {
+                return (
+                    <div>Hello World! This is a React component.</div>
+                );
+            }
+        }
+        ```
+     
+    *   Register the `HelloWorld` component in the `src/components/index.ts` file:
+    
+        ```
+        ...
+        import { HelloWorld } from "./HelloWorld";
+        index.HelloWorld = HelloWorld;
+
+        export function getComponentsIndex() {
+            return index;
+        }
+        ```
+
+2.  Update the rendering definition item
+
+    *   Open e.g. `/sitecore/layout/Renderings/Feature/Media/Page Header Media Carousel`
+    *   Rename it to `HelloWorld` (must match `index.HelloWorld = ...` above)
+    *   Click `Ribbon -> Configure -> Change (in the template chunk)`
+    *   Choose `/Templates/Uniform/JavaScript Rendering`
 
 ### Configure deployment on Sitecore publish
 WIP
