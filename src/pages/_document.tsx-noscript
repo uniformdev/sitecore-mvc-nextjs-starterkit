@@ -1,11 +1,12 @@
 import React from 'react';
-import Document, { Head, Main } from 'next/document';
+import Document, { Main } from 'next/document';
+import { NoPreloadScriptsHead } from '../components/CustomHead';
 
 export default class CustomDocument extends Document {
     render() {
         return (
             <html lang="en-US">
-                <Head />
+                <NoPreloadScriptsHead />
                 <body className="header-static">
                     <Main />
                 </body>
