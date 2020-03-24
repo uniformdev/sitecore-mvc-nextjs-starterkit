@@ -7,7 +7,6 @@
   "private": true,
   "license": "SEE LICENSE IN PROVIDED DISTRIBUTION PACKAGE",
   "scripts": {
-    "dev": "node ./server.js",
     "build": "next build",
     "start": "next build && cross-env NODE_ENV=production node ./server.js",
     "format": "prettier --write \"{./components,./pages}/**/*.{js,ts,tsx}\"",
