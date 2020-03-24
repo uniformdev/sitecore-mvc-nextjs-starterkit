@@ -9,8 +9,6 @@ const plugins = [
     [withUniform, { logger: serverLogger }],
 ];
 
-const nextConfig = {
-    exportTrailingSlash: true
-};
+const nextConfig = {};
 
 module.exports = withPlugins(plugins, nextConfig);
