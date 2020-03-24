@@ -22,7 +22,8 @@ function getPageFile(page: string, buildId?: string) {
 }
 
 export class CustomHead extends Head {
-  render() {
+// extracted and modified next 9.3.1 Head.render()
+render() {
     const {
       styles,
       ampPath,

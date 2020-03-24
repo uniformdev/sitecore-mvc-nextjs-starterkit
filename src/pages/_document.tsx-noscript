@@ -1,12 +1,12 @@
 import React from 'react';
 import Document, { Main } from 'next/document';
-import { CustomHead } from '../next931/CustomHead';
+import { NoPreloadScriptsHead } from '../components/CustomHead';
 
 export default class CustomDocument extends Document {
     render() {
         return (
             <html lang="en-US">
-                <CustomHead />
+                <NoPreloadScriptsHead />
                 <body className="header-static">
                     <Main />
                 </body>
