@@ -6,10 +6,14 @@ const dotenv = require('dotenv');
 module.exports = function() {
     dotenv.config();
     process.env.PORT = process.env.PORT || '3000';
-    process.env.UNIFORM_API_SITENAME = process.env.UNIFORM_API_SITENAME || 'HabitatPreview'
-    process.env.UNIFORM_API_URL = process.env.UNIFORM_API_URL || 'http://habitat.dev.local'
-    process.env.UNIFORM_DATA_URL = process.env.UNIFORM_DATA_URL || 'http://habitat.dev.local'
-    process.env.UNIFORM_OPTIONS_MVC_SUPPORT = process.env.UNIFORM_OPTIONS_MVC_SUPPORT || 'true';
-    process.env.UNIFORM_PUBLISH_TARGET = process.env.UNIFORM_PUBLISH_TARGET || 'none',
-    process.env.UNIFORM_API_TOKEN = process.env.UNIFORM_API_TOKEN || '1234'
+    process.env.UNIFORM_API_SITENAME = 'Habitat';
+    process.env.UNIFORM_API_URL = 'https://cranky-panini-ef102e.netlify.com/'; // static netlify site with copied sitemap
+    process.env.UNIFORM_DATA_URL = 'https://habitat92.blob.core.windows.net/data'
+    process.env.UNIFORM_OPTIONS_MVC_SUPPORT = 'true';
+    process.env.UNIFORM_PUBLISH_TARGET = 'none',
+    process.env.UNIFORM_API_TOKEN = process.env.UNIFORM_API_TOKEN || '1234';
+    process.env.UNIFORM_EXPORT_PREFETCH_ENABLED = 'false';
+    process.env.UNIFORM_MODE = 'publish';
+    process.env.UNIFORM_PUBLISH_FAKE_PUBLIC_URL = 'http://localhost:1234';
+    process.env.UNIFORM_PUBLISH_PREFETCH_REQUEST_TIMEOUT = '10000';
 }
