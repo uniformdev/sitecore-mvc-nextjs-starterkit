@@ -8,7 +8,7 @@
   "license": "SEE LICENSE IN PROVIDED DISTRIBUTION PACKAGE",
   "scripts": {
     "build": "next build",
-    "export:site": "next export --threads 40",
+    "export:site": "next export --threads 100",
     "move:static": "node ./scripts/move-static.js",
     "export": "npm-run-all --serial build export:site move:static"
   },
