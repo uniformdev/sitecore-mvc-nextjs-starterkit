@@ -8,9 +8,10 @@
   "license": "SEE LICENSE IN PROVIDED DISTRIBUTION PACKAGE",
   "scripts": {
     "build": "next build",
+    "dev": "next dev",
     "start": "next build && cross-env NODE_ENV=production node ./server.js",
     "format": "prettier --write \"{./components,./pages}/**/*.{js,ts,tsx}\"",
-    "export:site": "next export --threads 1",
+    "export:site": "next export",
     "export": "npm-run-all --serial build export:site",
     "azure": "node ./deploy-azure.js",
     "aws": "node ./deploy-aws.js",
