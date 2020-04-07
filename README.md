@@ -108,6 +108,12 @@ You are expected to get valid HTTP 200 response with JSON data.
 
    > Instead of specifying the `.env` file, you can use system environment variables instead.
 
+1. (Optional) connecting via HTTPS. Add the following parameter if connecting to Sitecore instance over HTTPs, as you may experience connection issue due to the certificates:
+
+   ```
+   NODE_TLS_REJECT_UNAUTHORIZED=0
+   ```
+
 1. Set the `NPM_TOKEN` environment variable with the value we provided you with.
 
    You can use `$Env:NPM_TOKEN="your-npm-token here"` in PowerShell or `export NPM_TOKEN="your-npm-token here"` in Bash.
