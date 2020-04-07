@@ -95,7 +95,7 @@ You are expected to get valid HTTP 200 response with JSON data.
 
    If your Sitecore host name is the same as the default (`http://habitat.dev.local`), you can skip this step.
 
-   Otherwise, you may need to override the defaults of some environment variables (defaults are set in `_config.js`).
+   Otherwise, you may need to override the defaults of some environment variables (defaults are set in `uniform.config.js`).
 
    Create `.env` file with connection details to your Sitecore dev instance.
 
@@ -186,7 +186,7 @@ Afterwards, make sure that you add the following Environment variables in the ne
 
 ![Netlify build-time environment variables](docs/images/netlify-env-vars.png "Netlify build-time environment variables")
 
-The following environment variables are must haves. If any of these settings differ from defaults in `_config.js` you would need to specify those in Netlify:
+The following environment variables are must haves. If any of these settings differ from defaults in `uniform.config.js` you would need to specify those in Netlify:
 
 ```
 UNIFORM_API_TOKEN=1234

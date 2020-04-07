@@ -1,5 +1,5 @@
-const _config = require('./_config');
-_config();
+const uniformConfig = require('./uniform.config');
+uniformConfig();
 
 const { server } = require('@uniformdev/next-server');
 const { serverLogger } = require('./utils/logging/serverLogger');

@@ -1,5 +1,5 @@
-const _config = require('./_config');
-_config();
+const uniformConfig = require('./uniform.config');
+uniformConfig();
 
 const withPlugins = require('next-compose-plugins');
 const withUniform = require('@uniformdev/next-server').config;
