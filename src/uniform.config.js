@@ -11,5 +11,6 @@ module.exports = function() {
     process.env.UNIFORM_DATA_URL = process.env.UNIFORM_DATA_URL || 'http://habitat.dev.local'
     process.env.UNIFORM_OPTIONS_MVC_SUPPORT = process.env.UNIFORM_OPTIONS_MVC_SUPPORT || 'true';
     process.env.UNIFORM_PUBLISH_TARGET = process.env.UNIFORM_PUBLISH_TARGET || 'none',
+    process.env.UNIFORM_MODE = process.env.UNIFORM_MODE || 'preview',
     process.env.UNIFORM_API_TOKEN = process.env.UNIFORM_API_TOKEN || '1234'
 }
