@@ -1,5 +1,12 @@
 # Uniform starter kit for Sitecore MVC (Habitat) and Next.js
 
+ [![Netlify Status](https://api.netlify.com/api/v1/badges/4e39f7cc-4dc2-4ed1-a1fc-47797f91a659/deploy-status)](https://app.netlify.com/sites/uniform-sitecore-mvc-nextjs/deploys)
+
+
+## Demo
+
+This is the latest deployment of this starter, [served from Netlify](https://uniform-sitecore-mvc-nextjs.netlify.com/).
+
 ## Value prop
 
 Uniform enables [JAMstack](https://jamstack.wtf/) style architecture for your Sitecore solution allowing to statically generate the whole site at build-time and deploy to your delivery platform of choice (this app is setup with Netlify, Azure and AWS S3 but it can work with virtually any combination of file/blob storage + CDN).
