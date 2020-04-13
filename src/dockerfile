@@ -1,0 +1,21 @@
+FROM node:12
+COPY . /home
+WORKDIR /home
+
+ARG NPM_TOKEN
+ENV NPM_TOKEN="${NPM_TOKEN}"
+
+RUN npm install
+
+ENV NPM_TOKEN=""
+
+ARG PORT=3000
+ENV PORT="${PORT}"
+
+RUN npm run build > build.log
+RUN base64 -w 0 build.log
+RUN chmod a=r .next/*
+
+EXPOSE ${PORT}
+
+CMD [ "node", "server.js" ]

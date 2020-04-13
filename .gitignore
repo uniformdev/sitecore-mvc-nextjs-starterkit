@@ -13,3 +13,4 @@ obj
 *.log
 *.user
 *.bak
+.temp

@@ -34,6 +34,13 @@ loggerTransports.push(consoleTransport);
 if (typeof window === 'undefined') {
     const fileTransport = new transports.File({ filename: '.debug.log', level: 'debug' });
     loggerTransports.push(fileTransport);
+
+    const { Timber } = require("@timberio/node");
+    const { TimberTransport } = require("@timberio/winston");
+    const timber = new Timber("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2FwaS50aW1iZXIuaW8vIiwiZXhwIjpudWxsLCJpYXQiOjE1ODYyNDg2NjUsImlzcyI6Imh0dHBzOi8vYXBpLnRpbWJlci5pby9hcGlfa2V5cyIsInByb3ZpZGVyX2NsYWltcyI6eyJhcGlfa2V5X2lkIjo3MjY1LCJ1c2VyX2lkIjoiYXBpX2tleXw3MjY1In0sInN1YiI6ImFwaV9rZXl8NzI2NSJ9.UaBeETwAgrAvs19BaPL8jHVOFC4ADOjWTVy9FN8sm0g", "35906");
+
+    // Create a Winston logger - passing in the Timber transport
+    loggerTransports.push(new TimberTransport(timber));
 }
 
 const serverLogger = createLogger({
