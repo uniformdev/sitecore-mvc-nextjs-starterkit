@@ -7,7 +7,7 @@ module.exports = function() {
     dotenv.config();
     process.env.PORT = 3000;
     process.env.UNIFORM_API_SITENAME = 'HabitatPreview';
-    process.env.UNIFORM_DATA_URL = 'https://habitat92.blob.core.windows.net/data'
+    process.env.UNIFORM_DATA_URL = 'https://habitatuniform.blob.core.windows.net/data'
     process.env.UNIFORM_OPTIONS_MVC_SUPPORT = 'true';
     
     process.env.UNIFORM_OPTIONS_DEBUG = '1';
@@ -16,7 +16,7 @@ module.exports = function() {
 
     process.env.UNIFORM_PUBLISH_TARGET = 'azureblob',
     process.env.AZURE_CONTAINER='$web';
-    process.env.UNIFORM_PUBLISH_AZUREBLOB_PUBLIC_URL="https://habitat92.z5.web.core.windows.net/"
+    process.env.UNIFORM_PUBLISH_AZUREBLOB_PUBLIC_URL="https://habitatuniform.z1.web.core.windows.net/"
 
     process.env.UNIFORM_EXPORT_PREFETCH_ENABLED = 'false';
     process.env.UNIFORM_MODE = 'mixed';
@@ -25,6 +25,6 @@ module.exports = function() {
 
     process.env.UNIFORM_API_URL="https://habitat-uniform-461960-single.azurewebsites.net/"
 process.env.UNIFORM_API_TOKEN="1234"
-process.env.AZURE_STORAGE_ACCOUNT="habitat92"
-process.env.AZURE_STORAGE_ACCESS_KEY="YmBMF8g4xjRFAzAn0w/dCCQDz128di8N/wvfWtcKjXvNRjyDZ7rQjHBBcJU3WqPe/g6cTHp7RbtnNglfACX/ew=="
+process.env.AZURE_STORAGE_ACCOUNT="habitatuniform"
+process.env.AZURE_STORAGE_ACCESS_KEY="hDvrp2JNPD9GRjgDZefNIgWkZHjIMm8WWuRqPM73HKX1m8BA0pAdQbB/FZHyXCCMejh/VdiMETox/jiJaJ++Cw=="
 }
