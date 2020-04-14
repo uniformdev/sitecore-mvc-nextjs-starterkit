@@ -5,8 +5,6 @@ WORKDIR /home
 ARG NPM_TOKEN
 ENV NPM_TOKEN="${NPM_TOKEN}"
 
-ENV NODE_ENV=production
-
 RUN npm install
 
 ENV NPM_TOKEN=""
@@ -16,7 +14,8 @@ ENV PORT="${PORT}"
 
 RUN npm run build > build.log
 RUN base64 -w 0 build.log
-RUN chmod a=r .next/*
+
+ENV NODE_ENV=production
 
 EXPOSE ${PORT}
 
