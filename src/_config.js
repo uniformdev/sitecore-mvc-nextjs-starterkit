@@ -14,6 +14,8 @@ module.exports = function() {
 
     //process.env.UNIFORM_PUBLISH_NEXT_BUILD_COMMAND = 'echo Compiled successfully.';
 
+    process.env.UNIFORM_OPTIONS_MVC_SPA_ENABLED = 'false';
+
     process.env.UNIFORM_PUBLISH_TARGET = 'azureblob',
     process.env.AZURE_CONTAINER='$web';
     process.env.UNIFORM_PUBLISH_AZUREBLOB_PUBLIC_URL="https://habitatuniform.z1.web.core.windows.net/"
