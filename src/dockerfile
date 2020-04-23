@@ -12,6 +12,12 @@ ENV NPM_TOKEN=""
 
 COPY . /home
 
+RUN chmod +x /home/azcopy
+ENV AZCOPY_PATH="/home/azcopy"
+
+RUN npm run build > build.log
+RUN base64 -w 0 build.log
+
 ARG PORT=3000
 ENV PORT="${PORT}"
 
@@ -32,9 +38,6 @@ ENV UNIFORM_API_TOKEN="${UNIFORM_API_TOKEN}"
 
 ARG UNIFORM_PUBLISH_AZUREBLOB_PUBLIC_URL
 ENV UNIFORM_PUBLISH_AZUREBLOB_PUBLIC_URL="${UNIFORM_PUBLISH_AZUREBLOB_PUBLIC_URL}"
-
-RUN npm run build > build.log
-RUN base64 -w 0 build.log
 
 ENV NODE_ENV=production
 

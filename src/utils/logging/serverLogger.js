@@ -1,5 +1,5 @@
 const { createLogger, format, transports } = require('winston');
-const { parseUniformConfig } = require('@uniformdev/common');
+const { getBoolEnv } = require('@uniformdev/common');
 
 const { combine, timestamp, colorize, printf } = format;
 
@@ -11,9 +11,8 @@ function paddy(text, padlen) {
 
 const loggerTransports = [];
 
-const config = parseUniformConfig(process.env);
 const consoleTransport = new transports.Console({
-    level: config.UNIFORM_OPTIONS_DEBUG ? 'debug' : 'info',
+    level: getBoolEnv(process.env, 'UNIFORM_OPTIONS_DEBUG', false) ? 'debug' : 'info',
     format: combine(
         timestamp({ format: 'MM/dd-HH:mm:ss' }),
         colorize({ all: true, colors: { debug: 'grey' } }),
@@ -40,7 +39,7 @@ const serverLogger = createLogger({
     transports: loggerTransports,
 });
 
-if (config.UNIFORM_OPTIONS_DEBUG) {
+if (getBoolEnv(process.env, 'UNIFORM_OPTIONS_DEBUG', false)) {
     serverLogger.debug('Logging initialized at debug level');
 }
 

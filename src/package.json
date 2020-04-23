@@ -7,15 +7,14 @@
   "private": true,
   "license": "SEE LICENSE IN PROVIDED DISTRIBUTION PACKAGE",
   "scripts": {
-    "latest": "npm i @uniformdev/common@latest @uniformdev/common-client@latest @uniformdev/next@latest @uniformdev/next-server@latest @uniformdev/publishing-awss3@latest @uniformdev/publishing-azureblobstorage@latest @uniformdev/publishing-netlify@latest",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node ./server.js"
   },
   "dependencies": {
-    "@uniformdev/common": "^2.0.200423-20",
-    "@uniformdev/common-client": "^2.0.200423-20",
-    "@uniformdev/next": "^2.0.200423-2",
-    "@uniformdev/next-server": "^2.0.200423-20",
+    "@uniformdev/common": "^2.0.200424-1",
+    "@uniformdev/common-client": "^2.0.200424-1",
+    "@uniformdev/next": "^2.0.200424-1",
+    "@uniformdev/next-server": "^2.0.200424-1",
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "loglevel": "^1.6.3",
