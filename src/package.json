@@ -9,18 +9,15 @@
   "scripts": {
     "latest": "npm i @uniformdev/common@latest @uniformdev/common-client@latest @uniformdev/next@latest @uniformdev/next-server@latest @uniformdev/publishing-awss3@latest @uniformdev/publishing-azureblobstorage@latest @uniformdev/publishing-netlify@latest",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production node ./server.js",
-    "export:site": "next export --threads 100",
-    "move:static": "node ./scripts/move-static.js",
-    "export": "npm-run-all --serial build export:site move:static"
+    "start": "cross-env NODE_ENV=production node ./server.js"
   },
   "dependencies": {
     "@timberio/node": "^0.35.0",
     "@timberio/winston": "^0.35.0",
-    "@uniformdev/common": "^2.0.200423-2",
-    "@uniformdev/common-client": "^2.0.200423-2",
+    "@uniformdev/common": "^2.0.200423-20",
+    "@uniformdev/common-client": "^2.0.200423-20",
     "@uniformdev/next": "^2.0.200423-2",
-    "@uniformdev/next-server": "^2.0.200423-2",
+    "@uniformdev/next-server": "^2.0.200423-20",
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "loglevel": "^1.6.3",
@@ -35,9 +32,6 @@
     "@types/node": "^13.11.1",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.8.4",
-    "@uniformdev/publishing-awss3": "^2.0.200414-8",
-    "@uniformdev/publishing-azureblobstorage": "^2.0.200414-8",
-    "@uniformdev/publishing-netlify": "^2.0.200414-8",
     "mv": "^2.1.1",
     "npm-run-all": "^4.1.5",
     "typescript": "^3.8.3"
