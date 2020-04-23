@@ -34,18 +34,6 @@ loggerTransports.push(consoleTransport);
 if (typeof window === 'undefined') {
     const fileTransport = new transports.File({ filename: '.debug.log', level: 'debug' });
     loggerTransports.push(fileTransport);
-
-    const key = process.env.TIMBER_KEY;
-    const id = process.env.TIMBER_ID;
-
-    if (key && id) {
-        const { Timber } = require("@timberio/node");
-        const { TimberTransport } = require("@timberio/winston");
-        const timber = new Timber(key, id);
-
-        // Create a Winston logger - passing in the Timber transport
-        loggerTransports.push(new TimberTransport(timber));
-    }
 }
 
 const serverLogger = createLogger({
