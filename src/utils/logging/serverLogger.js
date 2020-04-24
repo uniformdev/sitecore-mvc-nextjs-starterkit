@@ -10,9 +10,9 @@ function paddy(text, padlen) {
 }
 
 const loggerTransports = [];
-
+const isDebug = getBoolEnv(process.env, 'UNIFORM_OPTIONS_DEBUG', false);
 const consoleTransport = new transports.Console({
-    level: getBoolEnv(process.env, 'UNIFORM_OPTIONS_DEBUG', false) ? 'debug' : 'info',
+    level: isDebug ? 'debug' : 'info',
     format: combine(
         timestamp({ format: 'MM/dd-HH:mm:ss' }),
         colorize({ all: true, colors: { debug: 'grey' } }),
@@ -39,7 +39,7 @@ const serverLogger = createLogger({
     transports: loggerTransports,
 });
 
-if (getBoolEnv(process.env, 'UNIFORM_OPTIONS_DEBUG', false)) {
+if (isDebug) {
     serverLogger.debug('Logging initialized at debug level');
 }
 

@@ -1,8 +1,9 @@
 import React from 'react';
 
 // Uniform
+import { parseUniformConfig } from '@uniformdev/common';
 import { PageProps, getPageProps } from '@uniformdev/common-client';
-import { PageComponent, UniformContext, parseUniformNextConfig } from '@uniformdev/next';
+import { PageComponent, UniformContext, getNextConfig } from '@uniformdev/next';
 
 // App
 import { Placeholder } from '../components';
@@ -11,7 +12,7 @@ import { consoleLogger } from '../utils/logging/consoleLogger';
 // Page
 export default class extends React.Component<PageProps> {
     static async getInitialProps(arg: any) {
-        return getPageProps(arg.asPath, parseUniformNextConfig(), consoleLogger);
+        return await getPageProps(arg.asPath, parseUniformConfig(getNextConfig()), consoleLogger);
     }
 
     render() {
