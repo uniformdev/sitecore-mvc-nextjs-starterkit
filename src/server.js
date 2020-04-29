@@ -2,6 +2,6 @@ const _config = require('./uniform.config');
 _config();
 
 const { server } = require('@uniformdev/next-server');
-const { serverLogger } = require('./utils/logging/serverLogger');
+const { AzurePublishProvider } = require('@uniformdev/publishing-azureblobstorage');
 
-server({ logger: serverLogger });
+server({ publishProvider: new AzurePublishProvider() });

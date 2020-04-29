@@ -15,11 +15,11 @@
     "@uniformdev/common-client": "^2.0.200429-1",
     "@uniformdev/next": "^2.0.200429-1",
     "@uniformdev/next-server": "^2.0.200429-1",
+    "@uniformdev/publishing-azureblobstorage": "^2.0.200429-1",
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "loglevel": "^1.6.3",
     "next": "9.3.2",
-    "next-compose-plugins": "^2.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "winston": "^3.2.1"
