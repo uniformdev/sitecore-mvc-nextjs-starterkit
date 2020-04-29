@@ -11,10 +11,10 @@
     "start": "cross-env NODE_ENV=production node ./server.js"
   },
   "dependencies": {
-    "@uniformdev/common": "^2.0.200424-3",
-    "@uniformdev/common-client": "^2.0.200424-3",
-    "@uniformdev/next": "^2.0.200424-3",
-    "@uniformdev/next-server": "^2.0.200424-3",
+    "@uniformdev/common": "^2.0.200429-1",
+    "@uniformdev/common-client": "^2.0.200429-1",
+    "@uniformdev/next": "^2.0.200429-1",
+    "@uniformdev/next-server": "^2.0.200429-1",
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "loglevel": "^1.6.3",
