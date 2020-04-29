@@ -9,6 +9,8 @@ WORKDIR /home
 ARG NPM_TOKEN
 RUN npm install
 
+# NODE_ENV=production environment must be set before building next app
+ENV NODE_ENV=production
 
 COPY . /home
 RUN npm run build > build.log
@@ -35,7 +37,6 @@ ENV UNIFORM_API_TOKEN="${UNIFORM_API_TOKEN}"
 ARG UNIFORM_PUBLISH_AZUREBLOB_PUBLIC_URL
 ENV UNIFORM_PUBLISH_AZUREBLOB_PUBLIC_URL="${UNIFORM_PUBLISH_AZUREBLOB_PUBLIC_URL}"
 
-ENV NODE_ENV=production
 
 EXPOSE ${PORT}
 
