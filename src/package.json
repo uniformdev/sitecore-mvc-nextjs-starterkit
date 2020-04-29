@@ -11,9 +11,9 @@
     "start": "cross-env NODE_ENV=production node ./server.js"
   },
   "dependencies": {
-    "@uniformdev/next": "^2.0.200429-2",
-    "@uniformdev/next-server": "^2.0.200429-2",
-    "@uniformdev/publishing-azureblobstorage": "^2.0.200429-2",
+    "@uniformdev/next": "^2.0.200429-4",
+    "@uniformdev/next-server": "^2.0.200429-4",
+    "@uniformdev/publishing-azureblobstorage": "^2.0.200429-4",
     "cross-env": "^7.0.2",
     "next": "^9.3.2",
     "react": "^16.13.1",
