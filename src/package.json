@@ -11,15 +11,18 @@
     "start": "cross-env NODE_ENV=production node ./server.js"
   },
   "dependencies": {
-    "@uniformdev/next": "^2.0.200429-1",
-    "@uniformdev/next-server": "^2.0.200429-1",
-    "@uniformdev/publishing-azureblobstorage": "^2.0.200429-1",
+    "@uniformdev/next": "^2.0.200429-2",
+    "@uniformdev/next-server": "^2.0.200429-2",
+    "@uniformdev/publishing-azureblobstorage": "^2.0.200429-2",
     "cross-env": "^7.0.2",
-    "loglevel": "^1.6.3",
-    "next": "9.3.2",
+    "next": "^9.3.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "winston": "^3.2.1"
+    "react-dom": "^16.13.1"
+  },
+  "peerDependencies": {
+    "next": "^9.3.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@types/node": "^13.11.1",

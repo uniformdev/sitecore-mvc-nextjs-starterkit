@@ -1,8 +1,7 @@
 import React from 'react';
 
 // Uniform
-import { PageProps } from '@uniformdev/common-client';
-import { BasePlaceholder, PageComponent, UniformContext, getNextPageProps, consoleLogger, } from '@uniformdev/next';
+import { BasePlaceholder, PageComponent, UniformContext, NextPageProps, getNextPageProps, createConsoleLogger, } from '@uniformdev/next';
 
 // Components Index
 const componentsIndex: any = {};
@@ -24,21 +23,21 @@ componentsIndex["PageHeaderMediaCarousel" + COMPONENT_LOADER_SUFFIX] = PageHeade
 
 class Placeholder extends BasePlaceholder {
   constructor(props) {
-    super(props, componentsIndex, consoleLogger);
+    super(props, componentsIndex, createConsoleLogger());
   }
 }
 
 componentsIndex.Placeholder = Placeholder;
 
 // Page
-export default class extends React.Component<PageProps> {
+export default class extends React.Component<NextPageProps> {
     static async getInitialProps(arg: any) {
         return await getNextPageProps(arg);
     }
 
     render() {
         return (
-            <UniformContext.Provider value={{ logger: consoleLogger }}>
+            <UniformContext.Provider value={{ logger: createConsoleLogger() }}>
                 <PageComponent {...this.props} components={componentsIndex}>
                     {(renderingContext) => (
                         <Placeholder placeholderKey="/" renderingContext={renderingContext} />
