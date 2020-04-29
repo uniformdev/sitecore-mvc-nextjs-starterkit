@@ -2,9 +2,8 @@ FROM node:12
 RUN chmod +x /home/azcopy
 ENV AZCOPY_PATH="/home/azcopy"
 
-COPY package*.json /home/
-COPY .npmrc /home/.npmrc
-WORKDIR /home
+COPY [".npmrc", "package.json", "package-lock.json", "/home/"]
+WORKDIR /home/
 
 ARG NPM_TOKEN
 RUN npm install
