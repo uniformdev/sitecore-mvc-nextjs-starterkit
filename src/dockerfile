@@ -1,4 +1,7 @@
 FROM node:12
+RUN chmod +x /home/azcopy
+ENV AZCOPY_PATH="/home/azcopy"
+
 COPY package*.json /home/
 COPY .npmrc /home/.npmrc
 WORKDIR /home
@@ -8,9 +11,6 @@ RUN npm install
 
 
 COPY . /home
-RUN chmod +x /home/azcopy
-ENV AZCOPY_PATH="/home/azcopy"
-
 RUN npm run build > build.log
 RUN base64 -w 0 build.log
 
