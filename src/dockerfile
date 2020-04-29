@@ -4,14 +4,10 @@ COPY .npmrc /home/.npmrc
 WORKDIR /home
 
 ARG NPM_TOKEN
-ENV NPM_TOKEN="${NPM_TOKEN}"
-
 RUN npm install
 
-ENV NPM_TOKEN=""
 
 COPY . /home
-
 RUN chmod +x /home/azcopy
 ENV AZCOPY_PATH="/home/azcopy"
 
