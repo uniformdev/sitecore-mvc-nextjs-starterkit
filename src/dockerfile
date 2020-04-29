@@ -1,6 +1,4 @@
 FROM node:12
-RUN chmod +x /home/azcopy
-ENV AZCOPY_PATH="/home/azcopy"
 
 COPY [".npmrc", "package.json", "package-lock.json", "/home/"]
 WORKDIR /home/
@@ -29,7 +27,11 @@ ENV PORT="${PORT}" \
     UNIFORM_DATA_URL="${UNIFORM_DATA_URL}" \
     UNIFORM_API_URL="${UNIFORM_API_URL}" \
     UNIFORM_API_TOKEN="${UNIFORM_API_TOKEN}" \
-    UNIFORM_PUBLISH_AZUREBLOB_PUBLIC_URL="${UNIFORM_PUBLISH_AZUREBLOB_PUBLIC_URL}"
+    UNIFORM_PUBLISH_AZUREBLOB_PUBLIC_URL="${UNIFORM_PUBLISH_AZUREBLOB_PUBLIC_URL}" \
+    AZCOPY_PATH="/home/azcopy"
+
+# allow execution of azcopy
+RUN chmod +x /home/azcopy
 
 EXPOSE ${PORT}
 
