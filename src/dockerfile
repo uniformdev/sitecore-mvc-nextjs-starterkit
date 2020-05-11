@@ -3,7 +3,7 @@ FROM node:12
 COPY [".npmrc", "package.json", "package-lock.json", "/home/"]
 WORKDIR /home/
 
-ARG NPM_TOKEN
+ARG BASE64_AZURE_DEVOPS_PAT
 RUN npm install
 
 # NODE_ENV=production environment must be set before building next app
