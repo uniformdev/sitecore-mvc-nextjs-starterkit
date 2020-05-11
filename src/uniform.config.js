@@ -5,6 +5,7 @@ module.exports = function() {
     process.env.PORT = 3000;
     process.env.UNIFORM_API_SITENAME = 'HabitatPreview';
     process.env.UNIFORM_OPTIONS_MVC_SUPPORT = 'true';    
+    process.env.UNIFORM_OPTIONS_MVC_MODE = 'mvconly';    
     process.env.UNIFORM_OPTIONS_DEBUG = '1';
 
     //process.env.UNIFORM_PUBLISH_NEXT_BUILD_COMMAND = 'echo Compiled successfully.';
