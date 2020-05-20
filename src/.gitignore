@@ -33,3 +33,5 @@ aws.config.json
 .npmrc
 
 public/styles.css
+
+.temp
