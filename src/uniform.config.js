@@ -3,7 +3,7 @@
 // you can override the values in the .env file if required
 module.exports = function() {
     process.env.PORT = 3000;
-    process.env.UNIFORM_API_SITENAME = process.env.UNIFORM_API_SITENAME || 'HabitatPreview';
+    process.env.UNIFORM_API_SITENAME = process.env.UNIFORM_API_SITENAME || 'uniform-habitatPreview';
     process.env.UNIFORM_OPTIONS_MVC_SUPPORT = 'true';    
     process.env.UNIFORM_OPTIONS_MVC_MODE = 'mvconly';    
     process.env.UNIFORM_OPTIONS_DEBUG = '1';
