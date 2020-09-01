@@ -111,8 +111,6 @@ You are expected to get valid HTTP 200 response with JSON data.
    UNIFORM_DATA_URL=http://habitat92sc.dev.local
    ```
 
-   > For multi-lingual solutions, if your are not using the default `en` language for your site's content, you will need to adjust the value of the `UNIFORM_API_DEFAULT_LANGUAGE` to the ISO code of the content language you are using.
-
    > Instead of specifying the `.env` file, you can use system environment variables instead.
 
 1. (Optional) connecting via HTTPS. Add the following parameter if connecting to Sitecore instance over HTTPs, as you may experience connection issue due to the certificates:
