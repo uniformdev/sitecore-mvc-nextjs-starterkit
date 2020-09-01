@@ -90,7 +90,7 @@ Name: connection-string-name
 
 ### Quick test of the server-side
 
-Verify everything is working by making request to `http://your-sitecore-instance/api/map/habitat` and `http://your-sitecore-instance/api/page/habitat`
+Verify everything is working by making request to `http://your-sitecore-instance/uniform/api/content/habitat/map` and `http://your-sitecore-instance/uniform/api/content/habitat/page`
 
 > Please note that the last part of the url above (`habitat`) corresponds to the site name.
 
