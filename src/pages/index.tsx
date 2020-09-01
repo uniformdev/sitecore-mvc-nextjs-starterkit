@@ -1,31 +1,48 @@
-import React from 'react';
+import React from "react";
 
 // Uniform
-import { PageProps, getPageProps } from '@uniformdev/common-client';
-import { PageComponent, UniformContext } from '@uniformdev/next';
-const { getNextConfig } = require('@uniformdev/next');
-// App
-import { Placeholder } from '../components';
-import { consoleLogger } from '../utils/logging/consoleLogger';
+import {
+  BasePlaceholder,
+  PageComponent,
+  UniformContext,
+  NextPageProps,
+  getNextPageProps,
+  createConsoleLogger,
+} from "@uniformdev/next";
 
-// Page
-export default class extends React.Component<PageProps> {
-  static async getInitialProps(arg: any) {
-    return getPageProps(arg.asPath, getNextConfig(), consoleLogger);
-  }
+// Components Index
+const componentsIndex: any = {};
 
-  render() {
-    return (
-      <UniformContext.Provider value={{ logger: consoleLogger }}>
-        <PageComponent {...this.props} components={{}}>
-          {(renderingContext) => (
-            <Placeholder
-              placeholderKey='/'
-              renderingContext={renderingContext}
-            />
-          )}
-        </PageComponent>
-      </UniformContext.Provider>
-    );
+import { COMPONENT_LOADER_SUFFIX } from "@uniformdev/next";
+import { PageHeaderLoader } from "../components";
+
+componentsIndex[
+  "PageHeaderMediaCarousel" + COMPONENT_LOADER_SUFFIX
+] = PageHeaderLoader;
+
+class Placeholder extends BasePlaceholder {
+  constructor(props) {
+    super(props, componentsIndex, createConsoleLogger());
   }
 }
+
+componentsIndex.Placeholder = Placeholder;
+
+const Page = function (props: NextPageProps) {
+  const logger = createConsoleLogger();
+  return (
+    <UniformContext.Provider value={{ logger }}>
+      <PageComponent {...props} components={componentsIndex}>
+        {(renderingContext) => (
+          <Placeholder placeholderKey="/" renderingContext={renderingContext} />
+        )}
+      </PageComponent>
+    </UniformContext.Provider>
+  );
+};
+
+Page.getInitialProps = async function (arg: any) {
+  return await getNextPageProps(arg);
+};
+
+export default Page;

@@ -6,11 +6,12 @@ const dotenv = require("dotenv");
 
 const defaults = {
   PORT: 3000,
-  UNIFORM_API_SITENAME: "uniform-habitatPreview",
+  UNIFORM_API_SITENAME: "HabitatPreview",
   UNIFORM_API_URL: "http://habitat.dev.local",
   UNIFORM_DATA_URL: "http://habitat.dev.local",
   UNIFORM_OPTIONS_MVC_SUPPORT: true,
   UNIFORM_OPTIONS_MVC_SPA_ENABLED: false,
+  UNIFORM_OPTIONS_MVC_MODE: "mixed",
   UNIFORM_PUBLISH_TARGET: "none",
   UNIFORM_MODE: "preview",
   UNIFORM_API_TOKEN: "1234",

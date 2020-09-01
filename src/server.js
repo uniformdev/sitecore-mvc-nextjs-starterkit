@@ -1,8 +1,9 @@
 const uniformConfig = require('./uniform.config');
-const { createPublishProvider } = require('@uniformdev/publishing-all');
 uniformConfig();
 
 const { server } = require('@uniformdev/next-server');
-const { serverLogger } = require('./utils/logging/serverLogger');
+const { createPublishProvider } = require('@uniformdev/publishing-all');
 
-server({ logger: serverLogger, publishProvider: createPublishProvider(), });
+server({ 
+    createPublishProvider : (options) => createPublishProvider(options),
+});
