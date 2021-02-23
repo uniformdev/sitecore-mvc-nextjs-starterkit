@@ -1,12 +1,13 @@
-﻿<configuration xmlns:UNIFORM_SITES_MVC_SITE_DEPLOYMENT_SERVICE="http://www.sitecore.net/xmlconfig/UNIFORM_SITES_MVC_SITE_DEPLOYMENT_SERVICE/" xmlns:patch="http://www.sitecore.net/xmlconfig/" xmlns:set="http://www.sitecore.net/xmlconfig/set/">
-  <sitecore UNIFORM_SITES_MVC_SITE_DEPLOYMENT_SERVICE:require="netlify">
+﻿<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/" xmlns:set="http://www.sitecore.net/xmlconfig/set/">
+  <sitecore>
     <uniform>
       <siteConfigurations>
         <siteConfiguration name="uniform-mvc-kit">
           <deployment>
             <deploymentService ref="uniform/services/netlifyDeploymentService">
-              <ExternalSiteId>$(env:UNIFORM_SITES_MVC_SITE_EXTERNAL_SITE_ID)</ExternalSiteId>
-              <NetlifyAccessToken>$(env:NETLIFY_ACCESS_TOKEN)</NetlifyAccessToken>
+              <!-- WARNING: REPLACE THESE VALUES WITH THE RIGHT VALUES TO FIX MALFORMED XML -->
+              <ExternalSiteId><!>put Netlify site id in here<!></ExternalSiteId>
+              <NetlifyAccessToken><!>put Netlify access token in here<!></NetlifyAccessToken>
               <!-- Experimental feature that prevents checking netlify build status and blocking Sitecore publish-->
               <FireAndForget>false</FireAndForget>
             </deploymentService>

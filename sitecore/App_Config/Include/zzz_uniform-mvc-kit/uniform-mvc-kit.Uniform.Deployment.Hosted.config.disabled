@@ -6,9 +6,6 @@
           <deployment>
             <deploymentService set:ref="uniform/services/hostedDeploymentService">
               <ServiceUrl>http://localhost:3000</ServiceUrl>
-              <!-- <environmentVariables hint="raw:AddEnvironmentVariable">
-                <variable name="UNIFORM_PUBLISH_TARGET">azureblob</variable>
-              </environmentVariables> -->
             </deploymentService>       
           </deployment>
         </siteConfiguration>

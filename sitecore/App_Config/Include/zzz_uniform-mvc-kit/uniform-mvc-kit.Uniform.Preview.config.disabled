@@ -4,7 +4,8 @@
       <siteConfigurations>
         <siteConfiguration name="uniform-mvc-kit">
           <previewService ref="uniform/services/hostedPreviewService">
-            <ServiceUrl>$(env:UNIFORM_SITES_MVC_SITE_PREVIEW_ENDPOINT)</ServiceUrl>
+            <!-- WARNING: REPLACE THESE VALUES WITH THE RIGHT VALUES TO FIX MALFORMED XML -->
+            <ServiceUrl><!>must specify service url<!></ServiceUrl>
           </previewService>
         </siteConfiguration>
       </siteConfigurations>

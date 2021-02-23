@@ -7,8 +7,7 @@ const dotenv = require("dotenv");
 const defaults = {
   UNIFORM_API_SITENAME: "uniform-mvc-kit",
   UNIFORM_PUBLISH_TARGET: "none",
-  UNIFORM_MODE: "mixed",
-  UNIFORM_API_TOKEN: "12345",
+  UNIFORM_MODE: "mixed"
 };
 
 function processDefault(key, fallback) {

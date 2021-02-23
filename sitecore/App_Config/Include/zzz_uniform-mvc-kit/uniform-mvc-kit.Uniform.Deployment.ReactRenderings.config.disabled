@@ -4,7 +4,7 @@
       <services>
         <renderingNodeService>
           <javaScriptRenderingOverrides>
-            <simpleTextFake>{92891910-136E-4D1F-A9DD-2F23A024D97D}</simpleTextFake>         
+            <sampleRenderingId>{92891910-136E-4D1F-A9DD-2F23A024D97D}</sampleRenderingId>         
           </javaScriptRenderingOverrides>
         </renderingNodeService>
       </services> 

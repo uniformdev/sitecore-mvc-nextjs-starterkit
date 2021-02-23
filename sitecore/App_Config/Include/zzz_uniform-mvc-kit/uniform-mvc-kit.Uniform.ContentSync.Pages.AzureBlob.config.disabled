@@ -4,22 +4,24 @@
     (Recommended) for Uniform Service set UNIFORM_CONTENT_URL to Data Container URL e.g. https://mvc-site.blob.core.windows.net/data
 -->
 
-<configuration xmlns:UNIFORM_SITES_MVC_SITE_CONTENT_PROVIDER="http://www.sitecore.net/xmlconfig/UNIFORM_SITES_MVC_SITE_CONTENT_PROVIDER/" xmlns:UNIFORM_SITES_MVC_SITE_DEPLOYMENT_SERVICE="http://www.sitecore.net/xmlconfig/UNIFORM_SITES_MVC_SITE_DEPLOYMENT_SERVICE/" xmlns:env="http://www.sitecore.net/xmlconfig/env/" xmlns:set="http://www.sitecore.net/xmlconfig/set/">
-  <sitecore UNIFORM_SITES_MVC_SITE_CONTENT_PROVIDER:require="azureblob">
+<configuration xmlns:env="http://www.sitecore.net/xmlconfig/env/" xmlns:set="http://www.sitecore.net/xmlconfig/set/">
+  <sitecore>
     <uniform>    
       <siteConfigurations>
         <siteConfiguration name="uniform-mvc-kit">        
-          <deployment UNIFORM_SITES_MVC_SITE_DEPLOYMENT_SERVICE:require="hosted">
+          <deployment>
             <deploymentService>
               <environmentVariables hint="raw:AddEnvironmentVariable">
-                <variable name="UNIFORM_CONTENT_URL">$(env:UNIFORM_SITES_MVC_SITE_CONTENT_AZUREBLOB_URL)</variable>
+                <!-- WARNING: REPLACE THESE VALUES WITH THE RIGHT VALUES TO FIX MALFORMED XML -->
+                <variable name="UNIFORM_CONTENT_URL"><!>must specify content url<!></variable>
               </environmentVariables>
             </deploymentService>
           </deployment>
           <contentSync>
             <pageContentSyncService set:ref="uniform/services/azureBlobPageContentSyncService">
-              <ContainerName>$(env:UNIFORM_SITES_MVC_SITE_CONTENT_AZUREBLOB_CONTAINER_NAME)</ContainerName>
-              <ConnectionString>$(env:UNIFORM_SITES_MVC_SITE_CONTENT_AZUREBLOB_CONNECTIONSTRING)</ConnectionString>
+              <!-- WARNING: REPLACE THESE VALUES WITH THE RIGHT VALUES TO FIX MALFORMED XML -->
+              <ContainerName><!>must specify container name<!></ContainerName>
+              <ConnectionString><!>must specify connection string<!></ConnectionString>
             </pageContentSyncService>
           </contentSync>
         </siteConfiguration>

@@ -4,15 +4,16 @@
     There's a limitation that dynamic media transformation parameters will be ignored such as mw, mh, bg etc.
 -->
 
-<configuration xmlns:UNIFORM_SITES_MVC_SITE_MEDIA_PROVIDER="http://www.sitecore.net/xmlconfig/UNIFORM_SITES_MVC_SITE_MEDIA_PROVIDER/" xmlns:set="http://www.sitecore.net/xmlconfig/set/">
-  <sitecore UNIFORM_SITES_MVC_SITE_MEDIA_PROVIDER:require="azureblob">
+<configuration xmlns:set="http://www.sitecore.net/xmlconfig/set/">
+  <sitecore>
     <uniform>   
       <siteConfigurations>
         <siteConfiguration name="uniform-mvc-kit">
           <contentSync>
             <mediaContentSyncService set:ref="uniform/services/azureBlobMediaContentSyncService">
-              <ContainerName>$(env:UNIFORM_SITES_MVC_SITE_MEDIA_AZUREBLOB_CONTAINER_NAME)</ContainerName>
-              <ConnectionString>$(env:UNIFORM_SITES_MVC_SITE_MEDIA_AZUREBLOB_CONNECTIONSTRING)</ConnectionString>
+              <!-- WARNING: REPLACE THESE VALUES WITH THE RIGHT VALUES TO FIX MALFORMED XML -->
+              <ContainerName><!>specify container name here<!></ContainerName>
+              <ConnectionString><!>specify connection string here<!></ConnectionString>
             </mediaContentSyncService>
           </contentSync>
         </siteConfiguration>
