@@ -1,0 +1,30 @@
+{
+  "name": "@uniformdev/uniform-sitecore-mvc-nextjs-starterkit",
+  "version": "4.0.210222-3",
+  "private": true,
+  "license": "SEE LICENSE IN PROVIDED DISTRIBUTION PACKAGE",
+  "scripts": {
+    "dev": "node ./server.js",
+    "start": "cross-env-shell \"npm run build && node ./server.js\"",
+    "export": "cross-env-shell NODE_ENV=production UNIFORM_BUILD_MODE=export \"npm run build && next export\"",
+    "build": "next build",
+    "format": "prettier --write \"./{components,pages}/**/*.{js,ts,tsx}\""
+  },
+  "dependencies": {
+    "@uniformdev/next": "4.0.210222-3",
+    "@uniformdev/next-server": "4.0.210222-3",
+    "@uniformdev/publishing-all": "4.0.210222-3",
+    "dotenv": "^8.2.0",
+    "next": "10.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.17",
+    "@types/react-dom": "^16.8.4",
+    "cross-env": "^7.0.3",
+    "del-cli": "^3.0.1",
+    "get-port": "^5.1.1",
+    "typescript": "^4.1.3"
+  }
+}

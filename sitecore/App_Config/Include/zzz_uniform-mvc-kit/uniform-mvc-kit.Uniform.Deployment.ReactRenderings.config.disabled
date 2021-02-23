@@ -1,0 +1,13 @@
+﻿<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/" xmlns:set="http://www.sitecore.net/xmlconfig/set/">
+  <sitecore>
+    <uniform>
+      <services>
+        <renderingNodeService>
+          <javaScriptRenderingOverrides>
+            <simpleTextFake>{92891910-136E-4D1F-A9DD-2F23A024D97D}</simpleTextFake>         
+          </javaScriptRenderingOverrides>
+        </renderingNodeService>
+      </services> 
+    </uniform>
+  </sitecore>
+</configuration>

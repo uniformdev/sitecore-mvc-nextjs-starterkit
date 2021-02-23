@@ -1,0 +1,13 @@
+﻿<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/" xmlns:set="http://www.sitecore.net/xmlconfig/set/">
+  <sitecore>
+    <uniform>
+      <siteConfigurations>
+        <siteConfiguration name="uniform-mvc-kit">
+          <previewService ref="uniform/services/hostedPreviewService">
+            <ServiceUrl>$(env:UNIFORM_SITES_MVC_SITE_PREVIEW_ENDPOINT)</ServiceUrl>
+          </previewService>
+        </siteConfiguration>
+      </siteConfigurations>
+    </uniform>
+  </sitecore>
+</configuration>

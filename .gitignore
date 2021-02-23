@@ -1,15 +1,13 @@
-﻿node_modules
-packages
-bin
-obj
+/.*/
+node_modules 
+out
+.env
 
-.next
-.t
-.tmp
-.vs
+components/**/*d.ts
+components/**/*.js
+components/**/*.js.map
+pages/**/*d.ts
+pages/**/*.js
+pages/**/*.js.map
 
-*.env
-*.npmrc
-*.log
-*.user
-*.bak
+.debug.log
