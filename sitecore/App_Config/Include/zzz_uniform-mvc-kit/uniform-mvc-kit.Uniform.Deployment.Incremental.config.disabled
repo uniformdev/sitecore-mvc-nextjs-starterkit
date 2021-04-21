@@ -1,19 +1,45 @@
 ﻿<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/" xmlns:set="http://www.sitecore.net/xmlconfig/set/">
   <sitecore>
+
     <uniform>
+
       <siteConfigurations>
         <siteConfiguration name="uniform-mvc-kit">
+
           <deployment>
-            <deploymentStateService ref="uniform/services/webClientDeploymentStateService"> 
+
+            <!-- deploymentScopeService is used for both content sync (if configured) and deployment -->
+            <deploymentScopeService set:ref="uniform/services/incrementalDeploymentScopeService">
+              <!-- simple full deployment rules -->
+              <fullDeploymentRules hint="raw:AddFullDeploymentRule">
+              </fullDeploymentRules>
+            </deploymentScopeService>
+
+            <!-- deploymentStateService is only used for incremental deployment -->
+            <deploymentStateService ref="uniform/services/webClientDeploymentStateService">
               <!-- WARNING: REPLACE THESE VALUES WITH THE RIGHT VALUES TO FIX MALFORMED XML -->
               <PublicUrl><!>must specify public url<!></PublicUrl>
-            </deploymentStateService>      
-            <relatedMediaDeploymentScopeService ref="uniform/services/relatedMediaDeploymentScopeService" />
+            </deploymentStateService>
+
           </deployment>          
+
+          <pipelines>
+
+            <getDependentPages>
+
+              <!-- advanced full deployment rules -->
+              <processor type="Uniform.Pipelines.GetDependentPages.CheckFullDeploymentRules, Uniform.Deployment.Incremental">
+                <rules hint="list:AddFullDeploymentRule">
+                </rules>
+              </processor>
+            </getDependentPages>
+            
+          </pipelines>
+          
         </siteConfiguration>
       </siteConfigurations>
+
     </uniform>
-    <!-- LINKS DATABASE -->
-    <LinkDatabase set:type="Uniform.Links.ExtendedSqlServerLinkDatabase, Uniform.Deployment.Incremental" />
+    
   </sitecore>
 </configuration>
