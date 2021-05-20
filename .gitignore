@@ -11,3 +11,7 @@ pages/**/*.js
 pages/**/*.js.map
 
 .debug.log
+# Local Netlify folder
+.netlify
+
+.dist

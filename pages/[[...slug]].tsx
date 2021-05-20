@@ -1,5 +1,28 @@
 import React from "react";
-import { createConsoleLogger, getNextPageProps, isExportProcess, NextPageProps, PageComponent, Placeholder, UniformContextProvider } from "@uniformdev/next";
+import {
+  createConsoleLogger,
+  getNextPageProps,
+  isExportProcess,
+  NextPageProps,
+  PageComponent,
+  Placeholder,
+  UniformContextProvider,
+} from "@uniformdev/next";
+
+import { HtmlPreProcessingInstruction } from "@uniformdev/next";
+
+const formPreProcessingInstruction: HtmlPreProcessingInstruction = {
+  shouldPreprocessNode: (node: any) => {
+    return (
+      node.name === "form" &&
+      node.attribs.action &&
+      node.attribs.action.startsWith("/formbuilder")
+    );
+  },
+  preprocessNode: (node: any) => {
+    node.attribs.action = "/api/form";
+  },
+};
 
 // Register React components here if you migrate from MVC to React
 const componentsIndex: any = {};
@@ -7,7 +30,11 @@ const componentsIndex: any = {};
 // Root page handling all pages coming from Uniform Page Service API
 const Page = function (props: NextPageProps) {
   return (
-    <UniformContextProvider logger={createConsoleLogger()} componentMap={componentsIndex}>
+    <UniformContextProvider
+      logger={createConsoleLogger()}
+      componentMap={componentsIndex}
+      htmlPreProcessingInstructions={[formPreProcessingInstruction]}
+    >
       <PageComponent {...props}>
         {(renderingContext) => (
           <Placeholder placeholderKey="/" renderingContext={renderingContext} />
