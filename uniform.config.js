@@ -6,9 +6,11 @@ const dotenv = require("dotenv");
 
 const defaults = {
   UNIFORM_API_SITENAME: "uniform-mvc-kit",
-  UNIFORM_PUBLISH_TARGET: "none",
-  UNIFORM_MODE: "mixed"
-};
+  UNIFORM_PUBLISH_TARGET: "fake",
+  UNIFORM_MODE: "mixed",
+  UNIFORM_SSR_ENGINE: "nextjs",
+  UNIFORM_PUBLISH_NEXT_POST_EXPORT_COMMAND: 'node ./scripts/decode-esi.js "__DIR__"'
+}
 
 function processDefault(key, fallback) {
   if (!key) {
