@@ -1,0 +1,25 @@
+﻿<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/" xmlns:set="http://www.sitecore.net/xmlconfig/set/">
+  <sitecore>
+    <uniform>
+      <siteConfigurations>
+        <siteConfiguration name="uniform-mvc-kit">
+
+          <deployment>
+            <deploymentService>
+
+              <!-- these variables are used when "next build" and "next export" are performed by Uniform Self-Hosted Service instead of those that defined in the .env file -->
+              <environmentVariables hint="raw:AddEnvironmentVariable">
+                <variable name="UNIFORM_PUBLISH_TARGET">cloudflare</variable>
+                <variable name="CF_ACCOUNT_ID"><!>Cloudflare account ID<!></variable>
+                <variable name="CF_API_TOKEN"><!>Cloudflare worker API token<!></variable>
+                <variable name="CF_WORKER_NAME"><!>Cloudflare worker name<!></variable>
+              </environmentVariables>
+
+            </deploymentService>
+          </deployment>
+
+        </siteConfiguration>
+      </siteConfigurations>
+    </uniform>
+  </sitecore>
+</configuration>

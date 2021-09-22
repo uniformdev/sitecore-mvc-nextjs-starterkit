@@ -1,35 +1,36 @@
 {
   "name": "@uniformdev/uniform-sitecore-mvc-nextjs-starterkit",
-  "version": "5.0.210625-1",
+  "version": "5.1.210920-10",
   "private": true,
   "license": "SEE LICENSE IN PROVIDED DISTRIBUTION PACKAGE",
   "scripts": {
     "dev": "node ./server.js",
     "start": "cross-env-shell \"npm run build && node ./server.js\"",
-    "export:deploy": "cross-env-shell NODE_ENV=production UNIFORM_BUILD_MODE=export \"npm run build && next export\"",
-    "export:deploy-and-optimize": "cross-env-shell NODE_ENV=production UNIFORM_BUILD_MODE=export UNIFORM_OPTIONS_ESI=1 \"npm run build && next export && npm run decode-esi\"",
+    "export": "cross-env-shell NODE_ENV=production UNIFORM_BUILD_MODE=export \"npm run build && next export\"",
+    "export:esi": "cross-env-shell NODE_ENV=production UNIFORM_BUILD_MODE=export UNIFORM_OPTIONS_ESI=1 \"npm run build && next export && npm run decode-esi\"",
     "decode-esi": "node ./scripts/decode-esi.js ./out",
     "build": "next build",
     "format": "prettier --write \"./{components,pages}/**/*.{js,ts,tsx}\""
   },
   "dependencies": {
-    "@uniformdev/common": "5.0.210625-1",
-    "@uniformdev/next": "5.0.210625-1",
-    "@uniformdev/next-server": "5.0.210625-1",
-    "@uniformdev/publishing-all": "5.0.210625-1",
+    "@uniformdev/common": "5.1.210920-10",
+    "@uniformdev/next": "5.1.210920-10",
+    "@uniformdev/next-server": "5.1.210920-10",
+    "@uniformdev/publishing-all": "5.1.210920-10",
+    "@uniformdev/esi-edge-cloudflare": "5.1.210920-10",
+    "@cloudflare/kv-asset-handler": "=0.1.3",
     "dotenv": "^8.2.0",
-    "next": "10.0.5",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "next": "11.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "replace-in-file": "^6.2.0"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
-    "@types/react": "^16.8.17",
-    "@types/react-dom": "^16.8.4",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
     "cross-env": "^7.0.3",
-    "del-cli": "^3.0.1",
-    "get-port": "^5.1.1",
-    "typescript": "^4.1.3"
+    "del-cli": "4.0.1",
+    "typescript": "^4.2.3"
   }
 }
