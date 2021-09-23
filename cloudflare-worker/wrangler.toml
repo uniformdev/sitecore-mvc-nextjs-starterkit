@@ -1,0 +1,18 @@
+account_id = "__ACCOUNT_ID__"
+name = "__WORKER_NAME__"
+route = ""
+type = "webpack"
+webpack_config = "./wrangler-webpack.config.js"
+workers_dev = true
+zone_id = ""
+vars = { _DEBUG = "0", _SHOW_ERRORS = "1", _WAIT_FOR_RESPONSE = "0" }
+
+[site]
+bucket = "../"
+entry-point = "./"
+# include everything except `.wrangler` folder
+include = ["!.wrangler/"]
+
+[env.debug]
+vars = { _DEBUG = "1", _SHOW_ERRORS = "1", _WAIT_FOR_RESPONSE = "1" }
+
