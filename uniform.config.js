@@ -5,9 +5,13 @@ const dotenv = require("dotenv");
 // you can override the values in the .env file if required
 
 const defaults = {
-  UNIFORM_API_SITENAME: "uniform-mvc-kit",
+  PORT: 3010,
+  UNIFORM_API_SITENAME: "Habitat",
+  UNIFORM_API_URL: `https://habitat-sc${(process.env.DNS_SUFFIX || '')}.unfrm.space${(process.env.TLD_HTTPS_SUFFIX || '')}`,
+  UNIFORM_OPTIONS_MVC_SPA_ENABLED: false,
   UNIFORM_PUBLISH_TARGET: "none",
-  UNIFORM_MODE: "mixed"
+  UNIFORM_MODE: "preview",
+  UNIFORM_API_TOKEN: "12345",
 };
 
 function processDefault(key, fallback) {
