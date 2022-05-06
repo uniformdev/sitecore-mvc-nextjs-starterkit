@@ -1,4 +1,4 @@
-﻿<!--
+<!--
     When enabled, Uniform uses Azure Blob Storage as a permanent cache for all JSON files that Uniform Service uses during next export.
     
     (Recommended) for Uniform Service set UNIFORM_CONTENT_URL to Data Container URL e.g. https://mvc-site.blob.core.windows.net/data
