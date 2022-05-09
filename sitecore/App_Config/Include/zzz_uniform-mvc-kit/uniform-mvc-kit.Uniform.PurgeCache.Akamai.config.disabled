@@ -1,4 +1,4 @@
-﻿<!--
+<!--
     When enabled, Uniform purges Akamai Cache for the site after it was successfully deployed.
     
     NOTE "<!>" token is used to force Sitecore YSOD to make sure that the developer won't forget to configure it
