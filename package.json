@@ -1,6 +1,6 @@
 {
   "name": "@uniformdev/uniform-sitecore-mvc-nextjs-starterkit",
-  "version": "7.0.220504-2",
+  "version": "7.0.220526-1",
   "private": true,
   "license": "SEE LICENSE IN PROVIDED DISTRIBUTION PACKAGE",
   "scripts": {
@@ -13,11 +13,11 @@
     "format": "prettier --write \"./{components,pages}/**/*.{js,ts,tsx}\""
   },
   "dependencies": {
-    "@uniformdev/common": "7.0.220504-2",
-    "@uniformdev/esi-edge-cloudflare": "7.0.220504-2",
-    "@uniformdev/next": "7.0.220504-2",
-    "@uniformdev/next-server": "7.0.220504-2",
-    "@uniformdev/publishing-all": "7.0.220504-2",
+    "@uniformdev/common": "7.0.220526-1",
+    "@uniformdev/esi-edge-cloudflare": "7.0.220526-1",
+    "@uniformdev/next": "7.0.220526-1",
+    "@uniformdev/next-server": "7.0.220526-1",
+    "@uniformdev/publishing-all": "7.0.220526-1",
     "dotenv": "^8.2.0",
     "next": "12.1.4",
     "react": "^17.0.2",
