@@ -13,6 +13,9 @@
                 <variable name="CF_ACCOUNT_ID"><!>Cloudflare account ID<!></variable>
                 <variable name="CF_API_TOKEN"><!>Cloudflare worker API token<!></variable>
                 <variable name="CF_WORKER_NAME"><!>Cloudflare worker name<!></variable>
+                <variable name="CF_ZONE_ID"><!>YOUR-ZONE-ID<!></variable>
+                <variable name="CF_WORKER_ROUTE"><!>YOUR-WORKER-ROUTE<!></variable> 
+                <variable name="CF_WORKER_DIR">cloudflare-worker</variable>                
               </environmentVariables>
 
             </deploymentService>

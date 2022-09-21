@@ -1,25 +1,22 @@
 {
   "name": "@uniformdev/uniform-sitecore-mvc-nextjs-starterkit",
-  "version": "7.0.220504-2",
+  "version": "7.1.220915-1",
   "private": true,
   "license": "SEE LICENSE IN PROVIDED DISTRIBUTION PACKAGE",
   "scripts": {
     "dev": "node ./server.js",
     "start": "cross-env-shell \"npm run build && node ./server.js\"",
     "export:deploy": "cross-env-shell NODE_ENV=production UNIFORM_BUILD_MODE=export \"npm run build && next export\"",
-    "export:deploy-and-optimize": "cross-env-shell NODE_ENV=production UNIFORM_BUILD_MODE=export UNIFORM_OPTIONS_ESI=1 \"npm run build && next export && npm run decode-esi\"",
-    "decode-esi": "node ./scripts/decode-esi.js ./out",
     "build": "next build",
     "format": "prettier --write \"./{components,pages}/**/*.{js,ts,tsx}\""
   },
   "dependencies": {
-    "@uniformdev/common": "7.0.220504-2",
-    "@uniformdev/esi-edge-cloudflare": "7.0.220504-2",
-    "@uniformdev/next": "7.0.220504-2",
-    "@uniformdev/next-server": "7.0.220504-2",
-    "@uniformdev/publishing-all": "7.0.220504-2",
+    "@uniformdev/common": "7.1.220915-1",
+    "@uniformdev/next": "7.1.220915-1",
+    "@uniformdev/next-server": "7.1.220915-1",
+    "@uniformdev/publishing-all": "7.1.220915-1",
     "dotenv": "^8.2.0",
-    "next": "12.1.4",
+    "next": "12.2.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "replace-in-file": "^6.2.0"

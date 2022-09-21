@@ -3,11 +3,13 @@
     <uniform>
       <siteConfigurations>
         <siteConfiguration name="uniform-mvc-kit">
+
           <deployment>
             <deploymentService set:ref="uniform/services/hostedDeploymentService">
               <ServiceUrl>http://localhost:3000</ServiceUrl>
             </deploymentService>       
           </deployment>
+          
         </siteConfiguration>
       </siteConfigurations>
     </uniform>
