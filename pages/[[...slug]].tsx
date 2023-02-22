@@ -1,5 +1,5 @@
 import React from "react";
-import { createConsoleLogger, getNextPageProps, isExportProcess, NextPageProps, PageComponent, Placeholder, UniformContextProvider } from "@uniformdev/next";
+import { createConsoleLogger, getNextPageProps, NextPageProps, PageComponent, Placeholder, UniformContextProvider } from "@uniformdev/next";
 
 // Register React components here if you migrate from MVC to React
 const componentsIndex: any = {};
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
   // await import is essential here because getStaticPaths only server-side and import must only happen server side (on client-side the code will blow up)
   const { getStaticPaths } = await import("@uniformdev/next-server");
 
-  if (isExportProcess()) {
+  if (process.env.UNIFORM_BUILD_MODE !== 'ssr') {
     // If we are exporting the site directly or via a publish
     // specify all static paths and let nextjs handle 404
     return {

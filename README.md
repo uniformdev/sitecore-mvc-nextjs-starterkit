@@ -27,3 +27,6 @@ This kit can be used to complete the official tutorial and to kick off a new pro
 1. Add `NPM_TOKEN` environment variable with the value we provided you with.
 1. `npm run start` to start the SSR server.
 2. `npm run export:deploy` to run static expor.
+
+
+**Note:** Remove or update the `robots.txt` if you going to use this kit in production
