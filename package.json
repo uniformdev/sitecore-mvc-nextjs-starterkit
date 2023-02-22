@@ -1,6 +1,6 @@
 {
   "name": "@uniformdev/uniform-sitecore-mvc-nextjs-starterkit",
-  "version": "7.1.220915-1",
+  "version": "7.2.230222-1",
   "private": true,
   "license": "SEE LICENSE IN PROVIDED DISTRIBUTION PACKAGE",
   "scripts": {
@@ -11,20 +11,21 @@
     "format": "prettier --write \"./{components,pages}/**/*.{js,ts,tsx}\""
   },
   "dependencies": {
-    "@uniformdev/common": "7.1.220915-1",
-    "@uniformdev/next": "7.1.220915-1",
-    "@uniformdev/next-server": "7.1.220915-1",
-    "@uniformdev/publishing-all": "7.1.220915-1",
+    "@uniformdev/common": "7.2.230222-1",
+    "@uniformdev/common-client": "7.2.230222-1",
+    "@uniformdev/next": "7.2.230222-1",
+    "@uniformdev/next-server": "7.2.230222-1",
+    "@uniformdev/publishing-all": "7.2.230222-1",
     "dotenv": "^8.2.0",
-    "next": "12.2.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "next": "13.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "replace-in-file": "^6.2.0"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.2",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
     "cross-env": "^7.0.3",
     "del-cli": "^3.0.1",
     "get-port": "^5.1.1",

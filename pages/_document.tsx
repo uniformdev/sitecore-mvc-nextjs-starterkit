@@ -1,17 +1,19 @@
-import Document, { Html, Main, } from 'next/document'
+import Document, { Html, Main, } from 'next/document';
+
+import type { PageProps } from '@uniformdev/common-client';
 
 class MyDocument extends Document {
   render() {
     const { head } = this.props;
-    const page = this.props?.__NEXT_DATA__?.props?.pageProps?.page;
+    const page = this.props?.__NEXT_DATA__?.props?.pageProps as PageProps;
     if (!page) {
       return null;
     }
 
-    const { fields } = page || {};
+    const lang = page.lang || 'en';
     const uniformHead = head.filter((el) => el.type !== "meta");
     return (
-      <Html lang={fields._lang}>
+      <Html lang={lang}>
         <head>{uniformHead}</head>
         <body>
             <Main />
