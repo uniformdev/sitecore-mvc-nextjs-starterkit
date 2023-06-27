@@ -40,8 +40,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  const { tryFindItemId, tryGetTimestamp } = await import('@uniformdev/common-server');
   const asPath = "/" + (params?.slug?.join("/") || "");
-  const props = await getNextPageProps({ asPath });
+  const itemId = await tryFindItemId(asPath);
+  const timestamp = await tryGetTimestamp(asPath);
+  const props = await getNextPageProps({ asPath, itemId, timestamp });
   return { props };
 }
 
