@@ -7,7 +7,7 @@
           <deployment>
             <deploymentService>
 
-              <!-- these variables are used when "next build" and "next export" are performed by Uniform Self-Hosted Service instead of those that defined in the .env file -->
+              <!-- these variables are used when "next build" is performed by Uniform Self-Hosted Service instead of those that defined in the .env file -->
               <environmentVariables hint="raw:AddEnvironmentVariable">
                 <variable name="UNIFORM_PUBLISH_TARGET">cloudflare</variable>
                 <variable name="CF_ACCOUNT_ID"><!>Cloudflare account ID<!></variable>
