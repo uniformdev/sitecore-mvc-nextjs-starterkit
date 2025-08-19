@@ -1,4 +1,5 @@
 import Document, { Html, Main, } from 'next/document';
+import { UniformDebug } from '@uniformdev/next';
 
 import type { PageProps } from '@uniformdev/common-client';
 
@@ -16,6 +17,7 @@ class MyDocument extends Document {
       <Html lang={lang}>
         <head>{uniformHead}</head>
         <body>
+            <UniformDebug />
             <Main />
         </body>
       </Html>
